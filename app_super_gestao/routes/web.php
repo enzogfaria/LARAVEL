@@ -13,6 +13,8 @@ Route::prefix('/app')->group(function(){
     Route::get('/produtos', function() {return 'Produtos'; })->name('app.produtos');
 });
 
-Route::fallback(function () {
-    return redirect()->route('site.index');
-});
+Route::get('/teste/{p1}/{p2}', [\App\Http\Controllers\TesteController::class, 'teste'])->name('teste');
+
+//Route::fallback(function () {
+//    return redirect()->route('site.index');
+//});
