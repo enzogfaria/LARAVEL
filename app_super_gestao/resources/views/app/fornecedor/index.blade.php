@@ -4,22 +4,13 @@
 
 @php
     /*
-    if(!<condicao>) {} //enquanto o ! do if executa se o retorno for true
+    if(isset($variavel)) {} //retorna true se a variavel estiver definida
     }*/
 @endphp 
-{{--@dd($fornecedores)--}}
 
-{{-- @unless executa se o retorno for false --}}
-
+@isset($fornecedores)
 Fornecedor: {{ $fornecedores[0]['nome'] }}
 <br>
 Status: {{ $fornecedores[0]['status'] }}
 <br>
-
-{{--@if(!($fornecedores[0]['status'] == 'S'))
-    Fornecedor inativo
-@endif--}}
-
-@unless($fornecedores[0]['status'] == 'S') <!-- Se o retorno da condição for false -->
-    Fornecedor inativo
-@endunless
+@endisset
