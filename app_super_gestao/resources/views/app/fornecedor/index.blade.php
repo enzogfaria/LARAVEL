@@ -27,4 +27,17 @@
     CNPJ: {{ $fornecedores[0]['cnpj'] ?? 'CNPJ não inserido' }}
     <br>
     Telefone: ({{ $fornecedores[0]['ddd'] ?? '' }}) {{ $fornecedores[0]['telefone'] ?? '' }}
+    @switch($fornecedores[0]['ddd'])
+        @case('11')
+            Juiz de Fora - MG
+            @break
+        @case('85')
+            Fortaleza - CE
+            @break
+        @case('64')
+            Caldas Novas - GO
+            @break
+        @default
+            Estado não identificado
+    @endswitch
 @endisset
